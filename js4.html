@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time Display</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    .container {
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin: 10px;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+    #datetime {
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Date and Time Display</h1>
+        <button onclick="displayDate()">Show Date</button>
+        <button onclick="displayTime()">Show Time</button>
+        <p id="datetime"></p>
+    </div>
+    <script>
+        function displayDate() {
+    const datetimeElement = document.getElementById("datetime");
+
+    // Get the current date
+    const now = new Date();
+
+    // Format the date as a string
+    const dateString = now.toDateString();
+
+    // Display the date
+    datetimeElement.innerText = `Date: ${dateString}`;
+}
+
+function displayTime() {
+    const datetimeElement = document.getElementById("datetime");
+
+    // Get the current time
+    const now = new Date();
+
+    // Format the time as a string
+    const timeString = now.toLocaleTimeString();
+
+    // Display the time
+    datetimeElement.innerText = `Time: ${timeString}`;
+}
+
+    </script>
+</body>
+</html>

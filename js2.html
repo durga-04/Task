@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabetical Order</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    .container {
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    label, input, button {
+        margin: 10px;
+    }
+    
+    button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+    #output {
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Alphabetical Order</h1>
+        <label for="inputString">Enter a string:</label>
+        <input type="text" id="inputString">
+        <button onclick="sortAlphabetically()">Sort</button>
+        <p id="output">Sorted string will appear here</p>
+    </div>
+    <script>
+       function sortAlphabetically() {
+    const inputElement = document.getElementById("inputString");
+    const outputElement = document.getElementById("output");
+
+    // Get the user's input string
+    const inputString = inputElement.value;
+
+    // Check if the input string is not empty
+    if (inputString.trim() !== "") {
+        // Convert the string to lowercase and split it into an array of characters
+        const characters = inputString.toLowerCase().split('');
+
+        // Sort the array alphabetically
+        characters.sort();
+
+        // Join the sorted characters back into a string
+        const sortedString = characters.join('');
+
+        // Display the sorted string
+        outputElement.innerText = `Sorted string: ${sortedString}`;
+    } else {
+        outputElement.innerText = "Please enter a valid string.";
+    }
+} 
+    </script>
+</body>
+</html>
